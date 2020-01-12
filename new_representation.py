@@ -17,15 +17,4 @@ model = load_model('WindDenseNN.h5')
 # summarize the structure of the model
 model.summary()
 
-result = model.predict(data, batch_size=32)
-#print(result.shape)
-
-actual_data = pd.read_csv('actual.csv', sep=',', header=None, usecols=[*range(1, 8)])
-actual_data = np.array(actual_data)
-
-MAE = mean_absolute_error(actual_data, result)
-MSE = mean_squared_error(actual_data, result)
-
-print("MAE = ", MAE)
-print("MSE = ", MSE)
-print("MAPE = ", np.mean(np.abs((actual_data - result) / np.mean(actual_data))) * 100)
+print(model.layers[1])
