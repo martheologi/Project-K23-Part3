@@ -25,6 +25,6 @@ result = new_model.predict(data, batch_size=32)
 
 final = np.append(timestamps, result, axis=1)
 
-with open("repres_output.csv","w") as my_csv:
+with open("cluster/repres_output.csv","w") as my_csv:
     csvWriter = csv.writer(my_csv, delimiter=',')
     csvWriter.writerows(final)

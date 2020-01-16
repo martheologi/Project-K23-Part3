@@ -166,7 +166,7 @@ Vector_Item AproximateNN(vector<Vector_Item> Items, Vector_Item item, vector<Buc
 void write_results(string outfile, int I, int A, int U, int k, vector<Cluster> clusters, vector<Vector_Item> centroids, double cltime, int complete, vector<double> s, double stotal){
 
     ofstream Outfile;
-    Outfile.open(outfile, ios::app);
+    Outfile.open(outfile, ios::trunc);
 
     string line;
 

@@ -41,6 +41,7 @@ int main(int argc, char* argv[]){
     int buckets = c/8;
     cout << "Dataset with "<< Items.size() << " items" << endl;
     //cout <<d<<endl;
+    double max_stotal = 0.0;
 
     //kanoume tis 8 periptwseis
     for(int i=1; i<3; i++){
@@ -101,7 +102,10 @@ int main(int argc, char* argv[]){
                 double stotal = 0.0;
                 vector<double> s = Silhouette(clusters, Items, centroids, &stotal);
 
-                write_results(OUTfile, i, a, u, numof_clusters, clusters, centroids, time, complete, s, stotal);
+                if(stotal > max_stotal){
+                    max_stotal = stotal;
+                    write_results(OUTfile, i, a, u, numof_clusters, clusters, centroids, time, complete, s, stotal);
+                }
 
                 centroids.clear();
                 clusters.clear();
