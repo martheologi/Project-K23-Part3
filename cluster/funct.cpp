@@ -52,7 +52,7 @@ int Initialize_Dataset_Vector(string filename, vector<Vector_Item>* Items){
     file.open(filename);
     // extracting from the file
     //while (file.good())
-    for(int i=0; i<1000; i++)
+    for(int i=0; i<23988; i+=50)
     {
         if (!getline (file, line)) break;
 
